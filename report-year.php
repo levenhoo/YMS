@@ -37,7 +37,7 @@
 		<th colspan=\"4\">11月</th>
 		<th colspan=\"4\">12月</th>
 		<th colspan=\"4\">合计</th>
-		<th colspan=\"10\"  class=\"totalxx\">最终系数</th>
+		<th colspan=\"11\"  class=\"totalxx\">最终系数</th>
 		</tr>
 
 		<tr>
@@ -58,6 +58,7 @@
 		<th class=\"totalxx\">考勤系数</th>
 		<th class=\"totalxx\">年资系数</th>
 		<th class=\"totalxx\">奖罚系数</th>
+		<th class=\"\">备注</th>
 		<th class=\"hide totalxx\">工作表现系数</th>
 		<th class=\"hide totalxx\">合计系数</th>
 		<th class=\"hide totalxx\">公司系数</th>
@@ -200,23 +201,26 @@
              *              
              * *************************/
 
-
+            //基础系数
+            $basic = basicData($year,$jobdate);
 
             #region 总结系数
 
             //------------------------
             
-            $xs = floor($totalSj);
-            $temp = $totalSj - $xs;
+             /*2014.12.29 update levaedate */
+            $leaveday = leaveDate($year,$jobdate);
+            $levae_count = 0;
+            $xs = 0;       
             $nz = 0;
+            
             #region 事假
-            //事假3天以内（含3天）不在年终考核范围之内
-            if ($xs >= 3)
-            {
-                //有三天免扣
-                $xs = ($xs - 3) * 0.1;
-
-                if ($temp != 0)
+            //事假N天以内（含N天）不在年终考核范围之内 
+         	  if($totalSj>=$leaveday){ 
+         	  	$levae_count = $totalSj - $leaveday;
+         	  	$xs = floor($levae_count)*0.1;//取出整数部份每天0.1
+         	  	$temp = $levae_count - $xs;//小数部份
+         	  	 if ($temp != 0)
                 {
                     if ($temp <= 0.5)
                     {
@@ -228,10 +232,10 @@
                         //4小时以上不足8小时按一天计算为－0.1
                         $xs += 0.1;
                     }
-                }
-            }
-            else { $xs = 0; }
-
+                } 
+         	  } else { $xs = 0; } 
+        
+            $memo = '免除'.$leaveday;
 
             #endregion
 
@@ -266,7 +270,7 @@
             #string basic = basicData(int.Parse(y), jobdate);
 
 
-            $basic = basicData($year,$jobdate);
+           
             $HTML_ROW .= "<td title=\"基础系数\" class=\"sj\">".$basic."</td>"; 
 
             $HTML_ROW .= "<td title=\"考勤系数\" class=\"sj\">".$xs."</td>";
@@ -292,6 +296,7 @@
 
             $HTML_ROW .= "<td title=\"奖惩系数\" class=\"sj\">".$eventTotal."</td>";
            
+            $HTML_ROW .= "<td class=\"memo\" title=\"备注\">".$memo."</td>";
 
             $HTML_ROW .= "<td class=\"hide\" title=\"工作表现系数\"></td>";
             $HTML_ROW .= "<td class=\"hide\" title=\"合计系数\"></td>";
@@ -375,6 +380,9 @@ body{  background-color:#F2F2F2; }
 	<option <? if($year == '2013') echo'selected'; ?>  value="2013">2013</option>
 	<option <? if($year == '2014') echo'selected'; ?>  value="2014">2014</option>
 	<option <? if($year == '2015') echo'selected'; ?>  value="2015">2015</option>
+	<option <? if($year == '2016') echo'selected'; ?>  value="2016">2016</option>
+	<option <? if($year == '2017') echo'selected'; ?>  value="2017">2017</option>
+	<option <? if($year == '2018') echo'selected'; ?>  value="2018">2018</option>
     </select> 
 
     <select name="company" onchange="ActionForm.submit()">

@@ -1,5 +1,5 @@
 <?
-        /// <summary>
+    /// <summary>
     /// 基础系数
     /// </summary>
     /// <param name="year">年份</param>
@@ -55,6 +55,55 @@
         catch(Exception $e)
         {
             return "error";
+        } 
+
+       
+    }
+
+    /*2014.12.29
+      满一年3，不足3/12*月*/
+     function leaveDate($year,$date)
+    {
+        try
+        {
+            $jobdate =  strtotime($date);
+
+            //$spanYear = date("Y")-date("Y",$jobdate) - 1;
+
+            //当年1月1日 
+            $tYear = mktime(0,0,0,12,31,$year); 
+
+            $spanYear = date("Y",$tYear) - date("Y",$jobdate) ;
+
+
+            if ($spanYear >= 1)
+            {
+                //满1年的则3天
+                return "3";
+            } 
+
+            $spanMonth = date("m",$tYear)  - date("m",$jobdate) ;
+
+            if ( date("d",$jobdate) <= 15)
+            {
+                //每月15日前入职的算为满1个月 
+                $spanMonth += 1;
+            }
+            else
+            {
+                $spanMonth += 0.5;
+            }
+
+            //return ""+spanMonth+"月"  ;
+            //服务月数/12
+            return   sprintf("%.2f",(3/12*$spanMonth) )  ;
+ 
+            #endregion
+
+        }
+        catch(Exception $e)
+        {
+            return "error leave";
         } 
 
        

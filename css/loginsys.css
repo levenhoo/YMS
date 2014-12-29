@@ -1,0 +1,154 @@
+﻿body{background:#858585 url(/images/1130242727b6e65217l.jpg) ;font-family:"Helvetica Neue", Helvetica, Arial, "Trebuchet MS"}
+
+#login{width:400px;z-index:9999;position:relative;margin:100px auto 0}
+
+#login .box-in{border:0px solid #3e3e3e;background:#fff;padding:20px}
+
+#login .logo{text-align:center;padding-bottom:20px}
+
+#login .logo a{color:#fff;font-family:"Trebuchet MS", Arial, Helvetica;font-style:italic;font-size:38px;text-decoration:none}
+
+#login label{font-size:14px;color:#2b2b2b;font-weight:700;line-height:36px;display:block}
+
+#login .text{border:1px solid #e0e0e0;font-size:14px;margin-bottom:10px;color:#2b2b2b;width:316px;padding:10px}
+
+#login .checkbox{float:left;margin:11px 10px}
+
+#login .submit{background:#000 url(/images/s-bg.gif) repeat-x;border:1px solid #050505;font-weight:700;font-size:12px;color:#fff;text-decoration:none;text-align:center;height:38px;text-transform:uppercase;cursor:pointer;float:left;padding:0 20px}
+
+#login .remember-me{display:inline;float:left}
+
+#login .forget-password{color:#bcc1c9;text-decoration:none;padding-left:5px;font-size:12px}
+
+#login .forget-password:hover{color:#2facee}.shadow-login{height:80px;width:100%;background:url(/images/shadow.png) repeat-x}
+
+
+
+/*------------------------↓--验证码--↓------------------------*/
+
+ 
+
+#Vc_Text{ float:left;}
+
+#Vc_Pic{  float:left; margin:7px 0px 0px 10px; cursor:pointer;}
+
+
+
+
+
+/*---------弹出消息--------------*/
+#alertMessage {
+	font-size:16px;
+	font-weight:bold;
+	padding:15px 25px 15px 45px;
+	position:fixed;
+	text-align:center;
+	width:auto;
+	z-index:100001;
+	cursor:pointer;
+	font-family:'Myriad Pro', Arial, Helvetica, sans-serif;
+	background-color:#C2E3F0;
+	color:#34667A;
+	text-shadow:1px 1px 1px #C8EBFB;
+	display:none;
+	right: -20px;
+	text-transform: uppercase;
+	top: 75px;
+	opacity:0;
+	filter:alpha(opacity=0);
+	background-image: url(/images/info.png);
+	background-repeat: no-repeat;
+	background-position: 10px center;
+}
+.alertMessage {
+	font-size:16px;
+	font-weight:bold;
+	padding:15px 25px 15px 45px;
+	width:auto;
+	cursor:pointer;
+	font-family:'Myriad Pro', Arial, Helvetica, sans-serif;
+	background-color:#C2E3F0;
+	color:#34667A;
+	text-shadow:1px 1px 1px #C8EBFB;
+	text-transform: uppercase;
+	margin-bottom:15px;
+	background-image: url(/images/info.png);
+	background-repeat: no-repeat;
+	background-position: 10px center;
+}
+#alertMessage span, .alertMessage span {
+	border-left: 1px #488eaa solid;
+	border-right: 1px #efefef solid;
+	margin-right:10px;
+	padding:5px 0px;
+}
+#alertMessage.error, .alertMessage.error {
+	background-color:#fc4a48;
+	color:#5A0000;
+	text-shadow:1px 1px 1px #E64040;
+	background-image: url(/images/error.png);
+	border: 1px #a93a25 solid;
+}
+#alertMessage.error span, .alertMessage.error span {
+	border-left: 1px #7a0202 solid;
+	border-right: 1px #f08c8a solid;
+	margin-right:10px;
+	padding:5px 0px;
+}
+#alertMessage.success, .alertMessage.success {
+	background-color:#9bc652;
+	color:#324e03;
+	text-shadow:1px 1px 1px #5c9201;
+	background-image: url(/images/checkmark2.png);
+	border: 1px solid #69a44d;
+}
+.alertMessage.success span {
+	border-left: 1px #688901 solid;
+	border-right: 1px #d0e4a7 solid;
+	margin-right:10px;
+	padding:5px 0px;
+}
+#alertMessage.warning, .alertMessage.warning {
+	background-color:#fcdb72;
+	color:#987402;
+	text-shadow:1px 1px 1px #e7b104;
+	background-image: url(/images/help.png);
+}
+#alertMessage.warning span, .alertMessage.warning span {
+	border-left: 1px #987402 solid;
+	border-right: 1px #fff0c2 solid;
+	margin-right:10px;
+	padding:5px 0px;
+}
+
+
+
+
+
+
+
+.text_success {
+	font-size:14px;
+	text-align:center;
+	margin:0px 0 35px 0;
+	line-height:25px;
+	position: absolute;
+	left: 50%;
+	width: 200px;
+	top: 50%;
+	z-index: 50;
+	margin-left: -100px;
+	text-transform: uppercase;
+	padding: 20px 0px;
+	margin-top: -100px;
+	display:none ;
+}
+.text_success img {
+}
+.text_success span {
+	display: block;
+	padding: 10px;
+	color: #CCC;
+}
+
+ 

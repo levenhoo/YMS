@@ -1,15 +1,19 @@
-<?
+<?php
+ob_start();
+error_reporting(E_ALL);
+ini_set('display_errors', TRUE);
+ini_set('display_startup_errors', TRUE);
 
 	require_once "../include/LoginConfig.php" ;
-	require_once "../include/mysql.php";
+  require_once "../include/mysql.php";
 	require_once "../include/function.php" ;
 
-	$company = trim($_REQUEST["company"]);
+  	$company = trim($_REQUEST["company"]);
     $status = trim($_REQUEST["status"]) == "" ? "1" : trim($_REQUEST["status"]) ;
     $turnon = trim($_REQUEST["turnon"]);
     $sataffname = trim($_REQUEST["sataffname"]);
 
-    $where = " 1=1 ";
+   $where = " 1=1 ";
     
     if( !empty( $company ) )
         $where .= " and company = '".$company."' ";

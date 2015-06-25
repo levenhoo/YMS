@@ -219,7 +219,7 @@
          	  if($totalSj>=$leaveday){ 
          	  	$levae_count = $totalSj - $leaveday;
          	  	$xs = floor($levae_count)*0.1;//取出整数部份每天0.1
-         	  	$temp = $levae_count - $xs;//小数部份
+         	  	$temp = $levae_count - floor($levae_count);//减掉整数部份后的小数部份
          	  	 if ($temp != 0)
                 {
                     if ($temp <= 0.5)
@@ -292,23 +292,16 @@
             else
                   $HTML_ROW .= "<td title=\"年资系数\" class=\"sj\">0</td>" ;
 
-           
 
             $HTML_ROW .= "<td title=\"奖惩系数\" class=\"sj\">".$eventTotal."</td>";
-           
             $HTML_ROW .= "<td class=\"memo\" title=\"备注\">".$memo."</td>";
-
             $HTML_ROW .= "<td class=\"hide\" title=\"工作表现系数\"></td>";
             $HTML_ROW .= "<td class=\"hide\" title=\"合计系数\"></td>";
             $HTML_ROW .= "<td class=\"hide\" title=\"公司系数\"></td>";
             $HTML_ROW .= "<td class=\"hide\" title=\"综合系数\"></td>";
             $HTML_ROW .= "<td class=\"hide\" title=\"基本工资\"></td>";
             $HTML_ROW .= "<td class=\"hide\" title=\"年终奖金\"></td>";
-
             #endregion
-
-
-
 		$HTML_ROW .= "</tr>";
 
 
@@ -399,11 +392,9 @@ body{  background-color:#F2F2F2; }
 
 	<div class="span12"> 
 			
-	<?  
-		
+	<?
 	    echo $head;
     	echo $HTML_ROW;
-
 	?>	 
 		
 	</div><!--/span-->

@@ -1,4 +1,4 @@
-<?
+<?php
     /// <summary>
     /// 基础系数
     /// </summary>

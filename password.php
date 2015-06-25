@@ -43,7 +43,7 @@
        <div class="row-fluid">
 <!-- PAGE CONTENT BEGINS HERE -->
 
-  <form class="form-horizontal" id="myform" name="myform"> 
+  <form class="form-horizontal" method="post" id="myform" name="myform"> 
    
     <input type="hidden" name="dataid" value="<?=$dataid?>" />
 
@@ -69,7 +69,6 @@
       <label class="control-label" for="form-field-1">再输入一次</label>
       <div class="controls">
         <input type="password" id="repwd" name="repwd" placeholder="再输入一次新密码" value="<?=$staffname?>" >
-         
       </div>
     </div>
  
